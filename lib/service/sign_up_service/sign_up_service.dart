@@ -11,7 +11,7 @@ class SignUpService {
   final dio = Dio();
   Future<SignUpTokenModel?> signUp(SignupModel model, context) async {
     try {
-      Response response = await dio.post(ApiUrl.apiUrl + ApiEndPoints.signUp,
+      Response response = await dio.post(ApiUrl.apiUrl + ApiEndPoints.signupUrl,
           data: jsonEncode(model.toJson()),
           queryParameters: {
             'Content-type': 'application/json',
