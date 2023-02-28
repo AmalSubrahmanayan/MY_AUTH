@@ -1,20 +1,20 @@
 import 'package:authentication/constants/colors/app_colors.dart';
 import 'package:authentication/constants/sizedboxes/app_sizedboxes.dart';
+import 'package:authentication/controller/sign_in_controller/sign_in_controller.dart';
 import 'package:authentication/view/widgets/my_button.dart';
 import 'package:authentication/view/widgets/my_textfield.dart';
 import 'package:authentication/view/widgets/square_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SignIn extends StatelessWidget {
-  SignIn({super.key});
-  // text editing controller
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  // sign usrt in method
+  const SignIn({super.key});
+  
   void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<SignInProvider>(context);
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: SafeArea(
@@ -49,7 +49,7 @@ class SignIn extends StatelessWidget {
                 AppSizedBoxes.sizedboxH25,
                 // user name textfeld
                 MyTextfield(
-                  controller: emailController,
+                  controller: controller.emailController,
                   hintText: "Email Address",
                   obscureText: false,
                 ),
@@ -57,7 +57,7 @@ class SignIn extends StatelessWidget {
 
                 // password textfeld
                 MyTextfield(
-                  controller: passwordController,
+                  controller: controller.passwordController,
                   hintText: "Enter your password",
                   obscureText: true,
                 ),
@@ -71,8 +71,8 @@ class SignIn extends StatelessWidget {
 
                 // google + apple sign in buttons
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  padding: EdgeInsets.all(10),
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                   ),
