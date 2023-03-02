@@ -65,6 +65,7 @@ class SignIn extends StatelessWidget {
 
                 // signin button
                 MyButton(
+                  name: "Signin",
                   onTap: signUserIn,
                 ),
                 AppSizedBoxes.sizedboxH15,
