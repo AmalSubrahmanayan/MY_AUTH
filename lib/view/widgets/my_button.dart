@@ -3,8 +3,9 @@ import 'package:flutter/widgets.dart';
 
 class MyButton extends StatelessWidget {
   final void Function()? onTap;
+  final String name;
 
-  MyButton({super.key, required this.onTap});
+  MyButton({super.key, required this.onTap, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,9 @@ class MyButton extends StatelessWidget {
         decoration: BoxDecoration(
             color: AppColors.greenColor,
             borderRadius: BorderRadius.circular(8)),
-        child: const Center(
+        child: Center(
           child: Text(
-            "Sign in",
+            name,
             style: TextStyle(
               color: AppColors.whiteColor,
               fontWeight: FontWeight.bold,
